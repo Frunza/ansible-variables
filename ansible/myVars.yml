@@ -1,0 +1,2 @@
+appBaseDir: /data/myApp
+appDataDir: "{{ appBaseDir }}/data"

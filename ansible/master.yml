@@ -1,0 +1,25 @@
+- name: master playlist
+  hosts: hosts
+  gather_facts: true
+  become: yes
+  vars_files:
+    - myVars.yml
+  vars:
+    myLocalVariable: "value of my local variable"
+    myLocalVariable2: "value of my local variable2"
+  tasks:
+    - name: Print value of myLocalVariable
+      debug:
+        msg: "myLocalVariable: {{ myLocalVariable }}"
+
+    - name: Print value of myLocalVariable2
+      debug:
+        msg: "myLocalVariable2: {{ myLocalVariable2 }}"
+
+    - name: Print value of appBaseDir from myVars.yml
+      debug:
+        msg: "appBaseDir: {{ appBaseDir }}"
+
+    - name: Print value of appDataDir from myVars.yml
+      debug:
+        msg: "appDataDir: {{ appDataDir }}"
