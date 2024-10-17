@@ -21,7 +21,7 @@ Make sure that you already have a docker container with SSH access.
 
 ## Implementation
 
-If there are more places in yout playlist where you want to use the same value in more tasks, you can declare variables as shown below:
+If there are more places in your playlist where you want to use the same value in more tasks, you can declare variables as shown below:
 ```sh
   vars:
     myLocalVariable: "value of my local variable"
@@ -71,8 +71,8 @@ sh run.sh
 ```
 
 The following happens:
-1) the first command builds the docker image, passing the private key value as an argument and tagging it as *respondansible*
+1) the first command builds the docker image, passing the private key value as an argument and tagging it as *variablesansible*
 2) the docker image sets up the SSH access by copying the value of the `SSH_PRIVATE_KEY` argument to the standard location for SSH keys
-3) the second command uses docker-compose to run the `Ansible` playboog that prints out the values of various variables
+3) the second command uses docker-compose to run the `Ansible` playbook that prints out the values of various variables
 
 Note: if you want to test this locally, consider changing the `hosts` in the `Ansible` playbook to `local`.
